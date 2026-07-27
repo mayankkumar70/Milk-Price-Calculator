@@ -1,0 +1,21 @@
+{
+  "name": "Milk Price Calculator",
+  "short_name": "Milk Calc",
+  "description": "Calculate milk prices on the go.",
+  "start_url": "milk-calculator.html",
+  "display": "standalone",
+  "background_color": "#f4f7f6",
+  "theme_color": "#4CAF50",
+  "icons": [
+    {
+      "src": "icon-192X192.png",
+      "sizes": "192X192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512X512.png",
+      "sizes": "512X512",
+      "type": "image/png"
+    }
+  ]
+}
