@@ -575,13 +575,13 @@
         // Initialize the calculator when the DOM is fully loaded
         function clearZero(input) {
             if (input.value === "0") {
-        input.value = "";
+                input.value = "";
             }
         }
 
         function restoreZero(input) {
             if (input.value.trim() === "") {
-        input.value = "0";
+                input.value = "0";
 
         // Update the calculator immediately
         const productId = input.dataset.productId;
