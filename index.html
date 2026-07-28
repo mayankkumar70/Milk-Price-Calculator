@@ -433,6 +433,8 @@
                                 min="0"
                                 step="1"
                                 data-product-id="${product.id}"
+                                onfocus="clearZero(this)"
+                                onblur="restoreZero(this)"
                                 oninput="handleQuantityInput(event)"
                                 onkeydown="handleKeyDown(event)"
                                 aria-label="Quantity for ${product.name} ${product.details}"
@@ -571,6 +573,25 @@
 
         // --- Initial Call ---
         // Initialize the calculator when the DOM is fully loaded
+        function clearZero(input) {
+    if (input.value === "0") {
+        input.value = "";
+    }
+}
+
+        function restoreZero(input) {
+    if (input.value.trim() === "") {
+        input.value = "0";
+
+        // Update the calculator immediately
+        const productId = input.dataset.productId;
+        currentQuantities[productId] = 0;
+        updateSubtotal(productId);
+        updateSummary();
+
+        document.getElementById(`item-${productId}`).classList.remove("active");
+    }
+}
         document.addEventListener('DOMContentLoaded', initializeCalculator);
 
     </script>
